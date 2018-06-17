@@ -1,3 +1,5 @@
+# XBee3 MicroPython INA219
+
 This project has some instructions and code for wiring up an INA219 current
 and voltage sensing chip with an XBee3 with MicroPython and filesystem support.
 
@@ -9,6 +11,9 @@ kit (XKC-V1T-U) with an Adafruit INA219 FeatherWing.
 2. Connect the GND pin of the FeatherWing to the GND pin of the XBee Cellular dev board
 3. Connect the scl pin of the FeatherWing to the D1 (DIO1) pin of the XBee Cellular dev board
 4. Connect the sda pin of the FeatherWing to the P1 (DIO11/PWM1) pin of the XBee Cellular dev board
+
+![xbee_to_ina219](https://github.com/cpopp/XBee3-MicroPython-INA219/raw/master/images/xbee-ina219.jpg)
+
 
 ##### Update firmware and format filesystem
 
@@ -65,8 +70,11 @@ At this point you are ready to hook up a load to measure.
 4. The ground side of your device should also go to the ground of the INA219 breakout for voltage measurement
 
 ##### Example load
-I used a USB power supply and tested a 220 ohm resistor as my load yielding
-the following output from the code in xbee_ina219.py:
+I used a USB power supply and tested a 220 ohm resistor as my load wired up as shown in this image:
+
+![ina219_load](https://raw.githubusercontent.com/cpopp/XBee3-MicroPython-INA219/master/images/load.jpg)
+
+with the the following output after running the code in xbee_ina219.py:
 
     Running 388 bytes of stored bytecode...
     Bus Voltage: 5.208 V
