@@ -1,6 +1,6 @@
 # XBee3 MicroPython INA219
 
-This project has some instructions and code for wiring up an INA219 current
+This project has instructions and code for wiring up an INA219 current
 and voltage sensing chip with an XBee3 with MicroPython and filesystem support.
 
 Specifically this project uses a Digi XBee Cellular LTE Cat 1 Verizon development
@@ -17,9 +17,9 @@ kit (XKC-V1T-U) with an Adafruit INA219 FeatherWing.
 
 ##### Update firmware and format filesystem
 
-Make sure you're running a version of firmware tha supports the filesystem
+Make sure you're running a version of firmware tha supports a filesystem
 for your XBee device.  If this is the first time upgrading to firmware
-support a filesystem you may need to format it with:
+supporting a filesystem you may need to format it with:
 
     ATFS FORMAT confirm
 
@@ -65,9 +65,9 @@ At this point you are ready to hook up a load to measure.
 
 ##### Wiring up a load
 1. The positive voltage of your supply should go to the Vin+ of the INA219 board
-2. The Vin- of the INA219 breakout should go to the supply side of the device being powered
-3. The ground side of your device being measured should go to the ground of your supply as normal
-4. The ground side of your device should also go to the ground of the INA219 breakout for voltage measurement
+2. The Vin- of the INA219 breakout should go to the supply side of the load
+3. The ground side of your load should go to the ground of your supply as normal
+4. The ground side of your load should also go to the ground of the INA219 breakout for voltage measurement
 
 ##### Example load
 I used a USB power supply and tested a 220 ohm resistor as my load wired up as shown in this image:
@@ -83,7 +83,7 @@ with the the following output after running the code in xbee_ina219.py:
 
 We can calculate the expected power dissipation of a resistor with V^2/R,
 so (5.208^2)/220 = 123.29 mW shows we have a very reasonable measured
-power and current given the measured voltage of the USB power supply.
+power and current.
 
 ##### References
 
